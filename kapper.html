@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbershop Sven – Kapper Tervuren</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--dark:#1a1210;--gold:#c9a84c;--cream:#f5f0e8;--gray:#6b6560}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 6%;background:var(--dark);position:sticky;top:0;z-index:99}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.05em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-btn{background:var(--gold);color:var(--dark);padding:0.6rem 1.4rem;border-radius:4px;font-size:0.82rem;font-weight:600;text-decoration:none;letter-spacing:0.05em;text-transform:uppercase}
+.hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;background:var(--dark)}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:8% 6% 8% 8%;position:relative}
+.hero-text::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:1px;background:rgba(201,168,76,0.3)}
+.hero-tag{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.5rem);color:#fff;line-height:1.08;letter-spacing:-0.02em;margin-bottom:1.5rem}
+.hero-text h1 em{color:var(--gold);font-style:normal}
+.hero-text p{color:rgba(255,255,255,0.5);font-size:1rem;line-height:1.8;font-weight:300;max-width:420px;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1rem;align-items:center}
+.btn-gold{background:var(--gold);color:var(--dark);padding:0.9rem 2rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.9rem;letter-spacing:0.04em}
+.btn-outline{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.9rem;border-bottom:1px solid rgba(201,168,76,0.4);padding-bottom:2px}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%)brightness(0.8)}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,18,16,0.4) 0%,transparent 60%)}
+.stats-bar{display:grid;grid-template-columns:repeat(3,1fr);background:#111;border-top:1px solid rgba(201,168,76,0.15)}
+.stat{padding:2rem;text-align:center;border-right:1px solid rgba(201,168,76,0.1)}
+.stat:last-child{border:none}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--gold);font-weight:700}
+.stat-l{font-size:0.78rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.3rem}
+.diensten{padding:100px 8%;background:var(--cream)}
+.diensten h2{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:0.75rem}
+.diensten-sub{color:var(--gray);margin-bottom:3.5rem;font-weight:300}
+.diensten-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.dienst{padding:2.5rem 2rem;border:1px solid rgba(0,0,0,0.08);border-radius:4px;background:#fff;transition:border-color 0.25s,transform 0.25s}
+.dienst:hover{border-color:var(--gold);transform:translateY(-4px)}
+.dienst-prijs{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold);margin-bottom:0.5rem}
+.dienst h3{font-size:1.05rem;margin-bottom:0.5rem}
+.dienst p{font-size:0.88rem;color:var(--gray);line-height:1.7;font-weight:300}
+.over{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--dark);min-height:500px}
+.over-img img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(30%)}
+.over-text{padding:8%;display:flex;flex-direction:column;justify-content:center}
+.over-tag{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.over-text h2{font-family:'Playfair Display',serif;font-size:2.4rem;color:#fff;margin-bottom:1.5rem;line-height:1.2}
+.over-text p{color:rgba(255,255,255,0.5);font-weight:300;line-height:1.8;margin-bottom:1rem;font-size:0.95rem}
+.reserveer{padding:80px 8%;text-align:center;background:var(--cream)}
+.reserveer h2{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem}
+.reserveer p{color:var(--gray);font-weight:300;margin-bottom:2.5rem}
+.form-row{display:flex;gap:1rem;max-width:500px;margin:0 auto}
+.form-input{flex:1;padding:0.9rem 1.2rem;border:1px solid rgba(0,0,0,0.15);border-radius:4px;font-family:'Inter',sans-serif;font-size:0.95rem;background:#fff;outline:none}
+.form-input:focus{border-color:var(--gold)}
+footer{background:#0e0c0b;padding:40px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold)}
+footer p{color:rgba(255,255,255,0.3);font-size:0.8rem;font-weight:300}
+</style>
+</head>
+<body>
+<nav>
+  <span class="nav-logo">Barbershop Sven</span>
+  <ul class="nav-links">
+    <li><a href="#">Diensten</a></li>
+    <li><a href="#">Over ons</a></li>
+    <li><a href="#">Reserveer</a></li>
+  </ul>
+  <a href="#" class="nav-btn">Reserveer nu</a>
+</nav>
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-tag">Barbershop · Tervuren</div>
+    <h1>Klassiek.<br><em>Stijlvol.</em><br>Verfijnd.</h1>
+    <p>Meer dan een knipbeurt — een ervaring. Bij Barbershop Sven combineren we traditionele technieken met een modern gevoel.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-gold">Reserveer een afspraak</a>
+      <a href="#" class="btn-outline">Bekijk diensten</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80" alt="Barbershop">
+    <div class="hero-img-overlay"></div>
+  </div>
+</section>
+<div class="stats-bar">
+  <div class="stat"><div class="stat-n">8+</div><div class="stat-l">Jaar ervaring</div></div>
+  <div class="stat"><div class="stat-n">2.400+</div><div class="stat-l">Tevreden klanten</div></div>
+  <div class="stat"><div class="stat-n">4.9★</div><div class="stat-l">Google beoordeling</div></div>
+</div>
+<section class="diensten">
+  <h2>Onze diensten</h2>
+  <p class="diensten-sub">Vakmanschap in elke knipbeurt</p>
+  <div class="diensten-grid">
+    <div class="dienst"><div class="dienst-prijs">€18</div><h3>Classic cut</h3><p>Klassieke knipbeurt inclusief wassen en stylen. Ideaal voor het onderhoud van jouw look.</p></div>
+    <div class="dienst"><div class="dienst-prijs">€28</div><h3>Knip + baard</h3><p>Combinatie van een knipbeurt en een professionele baardbehandeling met warm schuim.</p></div>
+    <div class="dienst"><div class="dienst-prijs">€22</div><h3>Hot towel shave</h3><p>Traditioneel scheren met warm doek en premium scheerschuim voor een gladde finish.</p></div>
+  </div>
+</section>
+<section class="over">
+  <div class="over-img"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=700&q=80" alt="Barbier aan het werk"></div>
+  <div class="over-text">
+    <div class="over-tag">Ons verhaal</div>
+    <h2>Passie voor het vak, al meer dan 8 jaar</h2>
+    <p>In 2016 opende Sven zijn eerste zaak in het hart van Tervuren. Met een opleiding in Londen en Antwerpen brengt hij het beste van twee werelden samen.</p>
+    <p>Elk bezoek is persoonlijk. Geen haast, geen compromis — enkel de beste versie van jouw look.</p>
+  </div>
+</section>
+<section class="reserveer">
+  <h2>Maak een afspraak</h2>
+  <p>Reserveer online of bel ons op 016 00 00 00</p>
+  <div class="form-row">
+    <input class="form-input" type="text" placeholder="Jouw naam">
+    <input class="form-input" type="tel" placeholder="Telefoonnummer">
+    <a href="#" class="btn-gold" style="white-space:nowrap">Reserveer</a>
+  </div>
+</section>
+<footer>
+  <span class="logo">Barbershop Sven</span>
+  <p>Dorpsstraat 12, Tervuren · ma–za 9u–18u</p>
+  <p>© 2025 Barbershop Sven</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedallica – Wielerclub Vlaams-Brabant</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#e62020;--dark:#0a0a0a;--gray:#1c1c1c;--card:#141414;--muted:#5a5a5a;--text:#e0e0e0;--white:#fff}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden}
+nav{background:var(--dark);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;position:sticky;top:0;z-index:99}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.08em;color:var(--white)}
+.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s;text-transform:uppercase;letter-spacing:0.06em}
+.nav-links a:hover{color:var(--white)}
+.nav-btn{background:var(--red);color:var(--white);padding:0.55rem 1.4rem;border-radius:6px;font-size:0.85rem;font-weight:600;text-decoration:none;text-transform:uppercase;letter-spacing:0.06em}
+.hero{position:relative;height:92vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover;filter:brightness(0.35) saturate(0.7)}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,var(--dark) 0%,transparent 60%)}
+.hero-content{position:relative;z-index:2;padding:0 5% 5%}
+.hero-tag{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem}
+.hero-tag::before{content:'';width:30px;height:2px;background:var(--red)}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,12vw,9rem);line-height:0.88;letter-spacing:0.04em;color:var(--white);margin-bottom:1.5rem}
+.hero h1 span{color:var(--red)}
+.hero p{color:rgba(224,224,224,0.6);font-weight:300;font-size:1.05rem;max-width:480px;line-height:1.75;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1rem}
+.btn-red{background:var(--red);color:var(--white);padding:0.9rem 2.2rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:0.92rem;text-transform:uppercase;letter-spacing:0.06em}
+.btn-border{border:1px solid rgba(255,255,255,0.2);color:var(--white);padding:0.9rem 2.2rem;border-radius:6px;text-decoration:none;font-weight:500;font-size:0.92rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--gray);border-bottom:1px solid rgba(255,255,255,0.05)}
+.stat{padding:2rem;text-align:center;border-right:1px solid rgba(255,255,255,0.05)}
+.stat:last-child{border:none}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--white);letter-spacing:0.04em}
+.stat-n span{color:var(--red)}
+.stat-l{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.3rem}
+.ploegen{padding:100px 5%}
+.section-label{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:1rem}
+.section-label::before{content:'';display:inline-block;width:20px;height:2px;background:var(--red);vertical-align:middle;margin-right:0.5rem}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;letter-spacing:0.04em;color:var(--white);margin-bottom:3rem}
+.ploegen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.ploeg-card{background:var(--card);border:1px solid rgba(255,255,255,0.05);border-radius:10px;overflow:hidden;transition:border-color 0.25s,transform 0.25s;cursor:pointer}
+.ploeg-card:hover{border-color:rgba(230,32,32,0.4);transform:translateY(-4px)}
+.ploeg-img{height:200px;overflow:hidden}
+.ploeg-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(30%)brightness(0.8);transition:transform 0.4s,filter 0.3s}
+.ploeg-card:hover .ploeg-img img{transform:scale(1.05);filter:grayscale(10%)brightness(0.9)}
+.ploeg-body{padding:1.5rem}
+.ploeg-cat{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:0.4rem;font-weight:600}
+.ploeg-body h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.04em;color:var(--white);margin-bottom:0.3rem}
+.ploeg-body p{font-size:0.85rem;color:var(--muted);font-weight:300;line-height:1.6}
+.agenda{padding:0 5% 100px;background:var(--dark)}
+.agenda-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px}
+.event-card{background:var(--card);border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:1.5rem;display:flex;gap:1.5rem;align-items:center}
+.event-date{min-width:56px;text-align:center;background:var(--red);border-radius:8px;padding:0.8rem 0.5rem}
+.event-date .day{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--white);line-height:1;letter-spacing:0.04em}
+.event-date .month{font-size:0.7rem;text-transform:uppercase;color:rgba(255,255,255,0.7);letter-spacing:0.1em}
+.event-info h4{font-weight:600;color:var(--white);margin-bottom:0.3rem;font-size:0.95rem}
+.event-info p{font-size:0.82rem;color:var(--muted);font-weight:300}
+footer{background:#080808;border-top:1px solid rgba(255,255,255,0.05);padding:3rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.08em;color:var(--white)}
+.footer-logo span{color:var(--red)}
+footer p{font-size:0.8rem;color:var(--muted);font-weight:300}
+</style>
+</head>
+<body>
+<nav>
+  <span class="nav-logo">Pedal<span>lica</span></span>
+  <ul class="nav-links">
+    <li><a href="#">Ploegen</a></li>
+    <li><a href="#">Agenda</a></li>
+    <li><a href="#">Galerij</a></li>
+    <li><a href="#">Club</a></li>
+  </ul>
+  <a href="#" class="nav-btn">Word lid</a>
+</nav>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Wielerclub · Vlaams-Brabant</div>
+    <h1>Rijd met<br><span>Pedallica</span></h1>
+    <p>Onze club verbindt wielrenners van alle niveaus in Vlaams-Brabant. Sportief, sociaal en voor iedereen.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-red">Word lid</a>
+      <a href="#" class="btn-border">Bekijk ploegen</a>
+    </div>
+  </div>
+</section>
+<div class="stats">
+  <div class="stat"><div class="stat-n">120<span>+</span></div><div class="stat-l">Actieve leden</div></div>
+  <div class="stat"><div class="stat-n">8</div><div class="stat-l">Ploegen</div></div>
+  <div class="stat"><div class="stat-n">15<span>+</span></div><div class="stat-l">Ritten per jaar</div></div>
+  <div class="stat"><div class="stat-n">2018</div><div class="stat-l">Opgericht</div></div>
+</div>
+<section class="ploegen">
+  <div class="section-label">Onze ploegen</div>
+  <div class="section-title">Elke renner heeft<br>zijn plek</div>
+  <div class="ploegen-grid">
+    <div class="ploeg-card"><div class="ploeg-img"><img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=600&q=80" alt="Elite"></div><div class="ploeg-body"><div class="ploeg-cat">Competitie</div><h3>Elite / Beloften</h3><p>Onze toprenners op provinciaal en nationaal niveau.</p></div></div>
+    <div class="ploeg-card"><div class="ploeg-img"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&q=80" alt="Recreatief"></div><div class="ploeg-body"><div class="ploeg-cat">Recreatief</div><h3>Toergroep</h3><p>Samen genieten van de mooiste routes in Vlaams-Brabant.</p></div></div>
+    <div class="ploeg-card"><div class="ploeg-img"><img src="https://images.unsplash.com/photo-1502224562085-639556652f33?w=600&q=80" alt="Jeugd"></div><div class="ploeg-body"><div class="ploeg-cat">Jeugd</div><h3>Juniors & Nieuwelingen</h3><p>De toekomst van de club, gecoacht met passie.</p></div></div>
+  </div>
+</section>
+<section class="agenda" style="padding-top:0">
+  <div class="section-label">Agenda</div>
+  <div class="section-title">Aankomende ritten</div>
+  <div class="agenda-grid">
+    <div class="event-card"><div class="event-date"><div class="day">01</div><div class="month">Jun</div></div><div class="event-info"><h4>Zondag clubrit – 80km</h4><p>Vertrek 8u · Gemeenteplein Tervuren</p></div></div>
+    <div class="event-card"><div class="event-date"><div class="day">08</div><div class="month">Jun</div></div><div class="event-info"><h4>Criterium Overijse</h4><p>Koers voor Elite en Beloften</p></div></div>
+    <div class="event-card"><div class="event-date"><div class="day">15</div><div class="month">Jun</div></div><div class="event-info"><h4>Gezinsrit – 40km</h4><p>Voor leden en hun familie</p></div></div>
+    <div class="event-card"><div class="event-date"><div class="day">22</div><div class="month">Jun</div></div><div class="event-info"><h4>Zomerkamp dag 1</h4><p>Ardennen · 3-daags kampeerkamp</p></div></div>
+  </div>
+</section>
+<footer>
+  <span class="footer-logo">Pedal<span>lica</span></span>
+  <p>Wielerclub Vlaams-Brabant · info@pedallica.be</p>
+  <p>© 2025 Pedallica</p>
+</footer>
+</body>
+</html>

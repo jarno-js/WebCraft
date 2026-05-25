@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bakkerij De Gouden Aar – Leuven</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--warm:#2c1a0e;--gold:#c8893a;--cream:#faf5ed;--light:#f0e8d8;--gray:#8a7c6e;--white:#fff}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--warm);overflow-x:hidden}
+nav{background:var(--warm);display:flex;justify-content:space-between;align-items:center;padding:0 6%;height:68px;position:sticky;top:0;z-index:99}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--gold);letter-spacing:0.02em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.88rem;font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-btn{background:var(--gold);color:var(--white);padding:0.55rem 1.4rem;border-radius:6px;font-size:0.85rem;font-weight:500;text-decoration:none}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.hero-text{background:var(--light);display:flex;flex-direction:column;justify-content:center;padding:8% 7%;position:relative}
+.hero-tag{font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.hero-text h1{font-family:'Fraunces',serif;font-size:clamp(2.5rem,4.5vw,4rem);line-height:1.1;letter-spacing:-0.01em;margin-bottom:1.5rem}
+.hero-text h1 em{font-style:italic;color:var(--gold)}
+.hero-text p{color:var(--gray);font-weight:300;line-height:1.8;max-width:380px;margin-bottom:2.5rem;font-size:0.97rem}
+.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.btn-warm{background:var(--warm);color:var(--white);padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.92rem}
+.btn-text{color:var(--warm);text-decoration:none;font-size:0.9rem;border-bottom:2px solid var(--gold);padding-bottom:2px}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+.banner{display:flex;justify-content:center;gap:4rem;padding:2rem 6%;background:var(--warm);text-align:center;flex-wrap:wrap}
+.banner-item{color:rgba(255,255,255,0.55);font-size:0.82rem;font-weight:300;display:flex;align-items:center;gap:0.5rem}
+.banner-item strong{color:var(--gold);font-weight:500}
+.assortiment{padding:100px 6%}
+.assortiment-header{text-align:center;margin-bottom:4rem}
+.assortiment-header h2{font-family:'Fraunces',serif;font-size:2.8rem;margin-bottom:0.75rem}
+.assortiment-header p{color:var(--gray);font-weight:300}
+.cat-tabs{display:flex;justify-content:center;gap:0.5rem;margin-bottom:3rem;flex-wrap:wrap}
+.cat-tab{padding:0.55rem 1.4rem;border-radius:100px;font-size:0.85rem;font-weight:500;border:1px solid rgba(0,0,0,0.12);cursor:pointer;transition:all 0.2s;text-decoration:none;color:var(--gray)}
+.cat-tab.active{background:var(--warm);color:var(--white);border-color:var(--warm)}
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.prod-card{background:var(--white);border-radius:12px;overflow:hidden;transition:transform 0.25s;box-shadow:0 2px 12px rgba(44,26,14,0.06)}
+.prod-card:hover{transform:translateY(-4px)}
+.prod-img{height:180px;overflow:hidden}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.prod-card:hover .prod-img img{transform:scale(1.06)}
+.prod-body{padding:1.2rem 1.2rem 1.5rem}
+.prod-tag{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.4rem}
+.prod-body h3{font-family:'Fraunces',serif;font-size:1.05rem;margin-bottom:0.3rem}
+.prod-body p{font-size:0.82rem;color:var(--gray);font-weight:300;line-height:1.6}
+.over{display:grid;grid-template-columns:1fr 1fr;background:var(--warm);margin:0}
+.over-img img{width:100%;height:100%;object-fit:cover;display:block;min-height:480px;filter:sepia(15%)brightness(0.85)}
+.over-content{padding:8% 7%;display:flex;flex-direction:column;justify-content:center}
+.over-tag{font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.over-content h2{font-family:'Fraunces',serif;font-size:2.5rem;color:var(--white);line-height:1.15;margin-bottom:1.5rem}
+.over-content p{color:rgba(255,255,255,0.5);font-weight:300;line-height:1.8;margin-bottom:1rem;font-size:0.95rem}
+footer{background:#1a0f07;padding:3rem 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Fraunces',serif;color:var(--gold);font-size:1.2rem}
+footer p{color:rgba(255,255,255,0.3);font-size:0.8rem;font-weight:300}
+</style>
+</head>
+<body>
+<nav>
+  <span class="nav-logo">De Gouden Aar</span>
+  <ul class="nav-links">
+    <li><a href="#">Assortiment</a></li>
+    <li><a href="#">Over ons</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <a href="#" class="nav-btn">Bestel online</a>
+</nav>
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-tag">Bakkerij · Leuven · Ambachtelijk</div>
+    <h1>Elke dag vers<br>gebakken met <em>liefde</em></h1>
+    <p>Al drie generaties bakt De Gouden Aar het lekkerste brood en gebak van Leuven. Enkel de beste ingrediënten, elk dag met de hand gemaakt.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-warm">Bekijk assortiment</a>
+      <a href="#" class="btn-text">Bestel online</a>
+    </div>
+  </div>
+  <div class="hero-img"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=900&q=80" alt="Vers brood"></div>
+</section>
+<div class="banner">
+  <div class="banner-item">🕖 <span>Openingstijden: <strong>di–za 6u30–18u</strong></span></div>
+  <div class="banner-item">📍 <span>Naamsestraat 14, <strong>Leuven</strong></span></div>
+  <div class="banner-item">📞 <span>Reserveer: <strong>016 00 00 00</strong></span></div>
+</div>
+<section class="assortiment">
+  <div class="assortiment-header">
+    <h2>Ons assortiment</h2>
+    <p>Elke ochtend vers uit de oven</p>
+  </div>
+  <div class="cat-tabs">
+    <a href="#" class="cat-tab active">Brood</a>
+    <a href="#" class="cat-tab">Gebak</a>
+    <a href="#" class="cat-tab">Taarten</a>
+    <a href="#" class="cat-tab">Seizoensgebonden</a>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=400&q=80" alt="Zuurdesembrood"></div><div class="prod-body"><div class="prod-tag">Specialiteit</div><h3>Zuurdesembrood</h3><p>48u fermentatie, krokante korst</p></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&q=80" alt="Croissant"></div><div class="prod-body"><div class="prod-tag">Ochtend</div><h3>Boter croissant</h3><p>Gelaagd, boterig, vers gebakken</p></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=400&q=80" alt="Meergranen"></div><div class="prod-body"><div class="prod-tag">Gezond</div><h3>Meergranenbrood</h3><p>Pompoen-, lijn- en zonnebloempitten</p></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&q=80" alt="Pistolets"></div><div class="prod-body"><div class="prod-tag">Klassiek</div><h3>Pistolets</h3><p>Zacht vanbinnen, knapperig vanbuiten</p></div></div>
+  </div>
+</section>
+<section class="over">
+  <div class="over-img"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=700&q=80" alt="Bakker aan het werk"></div>
+  <div class="over-content">
+    <div class="over-tag">Ons verhaal</div>
+    <h2>Drie generaties<br>bakkerstraditie</h2>
+    <p>In 1978 opende grootvader Jef zijn eerste bakkerij in de Naamsestraat. Vandaag staat kleinzoon Pieter elke ochtend om 4u op om de traditie voort te zetten.</p>
+    <p>Ambacht, eerlijkheid en de beste lokale ingrediënten — dat zijn onze drie pijlers.</p>
+  </div>
+</section>
+<footer>
+  <span class="footer-logo">De Gouden Aar</span>
+  <p>Naamsestraat 14, Leuven · di–za 6u30–18u</p>
+  <p>© 2025 Bakkerij De Gouden Aar</p>
+</footer>
+</body>
+</html>

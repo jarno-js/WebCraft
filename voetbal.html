@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FC Pintalona – Officiële Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#1a6b3c;--green-light:#22a05a;--dark:#0d1a12;--white:#fff;--gray:#8a9490;--bg:#f2f4f2}
+body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--dark);overflow-x:hidden}
+nav{background:var(--dark);display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;position:sticky;top:0;z-index:99}
+.nav-logo{display:flex;align-items:center;gap:0.75rem}
+.nav-crest{width:36px;height:36px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;font-weight:800;color:#fff;letter-spacing:0.05em}
+.nav-name{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;letter-spacing:0.05em;text-transform:uppercase}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.85rem;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;transition:color 0.2s}
+.nav-links a:hover{color:var(--green-light)}
+.hero{background:var(--dark);position:relative;overflow:hidden;padding:80px 5% 60px}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1600&q=80') center/cover;opacity:0.15}
+.hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.hero-tag{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:1.2rem}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,7vw,6rem);font-weight:800;text-transform:uppercase;line-height:0.92;letter-spacing:-0.01em;color:#fff;margin-bottom:1.5rem}
+.hero h1 span{color:var(--green-light)}
+.hero p{color:rgba(255,255,255,0.5);font-weight:300;font-size:1rem;line-height:1.7;max-width:420px;margin-bottom:2.5rem}
+.hero-btn{display:inline-block;background:var(--green);color:#fff;padding:0.9rem 2.2rem;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;border-radius:4px}
+.score-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:2rem;text-align:center;min-width:240px}
+.score-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-bottom:1rem}
+.score-teams{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:0.5rem}
+.score-team{font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;color:rgba(255,255,255,0.7);letter-spacing:0.05em}
+.score-result{font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.score-date{font-size:0.75rem;color:var(--gray);margin-top:0.5rem}
+.news{padding:80px 5%;background:var(--bg)}
+.news-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem}
+.news-header h2{font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:800;text-transform:uppercase;letter-spacing:0.02em}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.news-card{background:#fff;border-radius:10px;overflow:hidden;transition:transform 0.25s}
+.news-card:hover{transform:translateY(-4px)}
+.news-img{height:180px;overflow:hidden}
+.news-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.news-card:hover .news-img img{transform:scale(1.05)}
+.news-body{padding:1.5rem}
+.news-cat{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:0.5rem}
+.news-body h3{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2}
+.news-body p{font-size:0.85rem;color:var(--gray);line-height:1.65;font-weight:300}
+.stand{padding:0 5% 80px;background:var(--bg)}
+.stand h2{font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:800;text-transform:uppercase;margin-bottom:2rem}
+table{width:100%;max-width:800px;border-collapse:collapse}
+thead tr{background:var(--dark);color:#fff}
+thead th{padding:1rem 1.2rem;text-align:left;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+tbody tr{border-bottom:1px solid rgba(0,0,0,0.06);background:#fff;transition:background 0.15s}
+tbody tr:hover{background:#f8faf8}
+tbody tr.highlighted{border-left:3px solid var(--green)}
+tbody td{padding:0.9rem 1.2rem;font-size:0.9rem}
+.pos{font-weight:700;color:var(--gray)}
+.team-name{font-weight:500}
+.pts{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;color:var(--green)}
+footer{background:var(--dark);padding:3rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;text-transform:uppercase;color:#fff;letter-spacing:0.05em}
+footer p{color:rgba(255,255,255,0.35);font-size:0.8rem;font-weight:300}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">
+    <div class="nav-crest">FCP</div>
+    <span class="nav-name">FC Pintalona</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Nieuws</a></li>
+    <li><a href="#">Ploegen</a></li>
+    <li><a href="#">Kalender</a></li>
+    <li><a href="#">Spelers</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="hero-tag">Seizoen 2024–2025</div>
+      <h1>Passie voor<br><span>het spel</span></h1>
+      <p>FC Pintalona — trots vertegenwoordiger van onze gemeenschap op het veld. Sluit je aan bij ons verhaal.</p>
+      <a href="#" class="hero-btn">Word lid</a>
+    </div>
+    <div class="score-card">
+      <div class="score-label">Laatste wedstrijd</div>
+      <div class="score-teams"><span class="score-team">FCP</span><span style="color:var(--gray)">vs</span><span class="score-team">SKN</span></div>
+      <div class="score-result">3 – 1</div>
+      <div class="score-date">Zaterdag 18 mei 2025</div>
+    </div>
+  </div>
+</section>
+<section class="news">
+  <div class="news-header">
+    <h2>Laatste nieuws</h2>
+    <a href="#" style="color:var(--green);text-decoration:none;font-size:0.9rem;font-weight:500">Alle artikels →</a>
+  </div>
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-img"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" alt="Voetbal"></div>
+      <div class="news-body"><div class="news-cat">Wedstrijd</div><h3>3–1 overwinning tegen SKN!</h3><p>Een sterke teamprestatie leidde ons naar een verdiende overwinning in de thuiswedstrijd.</p></div>
+    </div>
+    <div class="news-card">
+      <div class="news-img"><img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=600&q=80" alt="Training"></div>
+      <div class="news-body"><div class="news-cat">Club</div><h3>Nieuwe trainer voor U17</h3><p>We verwelkomen onze nieuwe trainer die de jeugdwerking verder uitbouwt dit seizoen.</p></div>
+    </div>
+    <div class="news-card">
+      <div class="news-img"><img src="https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=600&q=80" alt="Jeugd"></div>
+      <div class="news-body"><div class="news-cat">Jeugd</div><h3>Zomerkamp inschrijvingen open</h3><p>Schrijf je in voor het jaarlijkse voetbalkamp voor spelers van 8 tot 16 jaar.</p></div>
+    </div>
+  </div>
+</section>
+<section class="stand">
+  <h2>Klassement</h2>
+  <table>
+    <thead><tr><th>#</th><th>Ploeg</th><th>G</th><th>W</th><th>G</th><th>V</th><th>Pts</th></tr></thead>
+    <tbody>
+      <tr><td class="pos">1</td><td class="team-name">Racing Tervuren</td><td>26</td><td>18</td><td>5</td><td>3</td><td class="pts">59</td></tr>
+      <tr><td class="pos">2</td><td class="team-name">SKN Overijse</td><td>26</td><td>16</td><td>4</td><td>6</td><td class="pts">52</td></tr>
+      <tr class="highlighted"><td class="pos">3</td><td class="team-name" style="color:var(--green);font-weight:700">FC Pintalona</td><td>26</td><td>14</td><td>6</td><td>6</td><td class="pts">48</td></tr>
+      <tr><td class="pos">4</td><td class="team-name">Huldenberg FC</td><td>26</td><td>12</td><td>5</td><td>9</td><td class="pts">41</td></tr>
+      <tr><td class="pos">5</td><td class="team-name">SC Duisburg</td><td>26</td><td>10</td><td>7</td><td>9</td><td class="pts">37</td></tr>
+    </tbody>
+  </table>
+</section>
+<footer>
+  <span class="footer-logo">FC Pintalona</span>
+  <p>Sportlaan 1, Vlaams-Brabant · info@fcpintalona.be</p>
+  <p>© 2025 FC Pintalona</p>
+</footer>
+</body>
+</html>
