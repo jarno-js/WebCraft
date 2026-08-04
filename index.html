@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WebCraft – Professionele Websites voor Lokale Bedrijven</title>
+<meta name="description" content="WebCraft bouwt professionele maatwerk-websites en webapplicaties voor sportclubs en lokale bedrijven in Vlaams-Brabant. Laravel, PHP & MySQL. Bekijk Pedallica, onze live clubwebapp.">
+<title>WebCraft – Maatwerk Websites voor Sportclubs & Lokale Bedrijven | Vlaams-Brabant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -23,7 +24,7 @@ body{background:var(--dark);color:var(--text);font-family:var(--font-body);font-
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;background:rgba(14,13,11,0.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
 .logo{font-family:var(--font-head);font-size:1.45rem;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-0.02em}
 .logo span{color:var(--orange)}
-.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s}
 .nav-links a:hover{color:var(--text)}
 .nav-cta{background:var(--orange)!important;color:var(--white)!important;padding:0.55rem 1.3rem;border-radius:8px;font-weight:600!important}
@@ -32,13 +33,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 5% 80px;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1800&q=80') center/cover no-repeat;filter:brightness(0.25) saturate(0.6);z-index:0}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1800&q=80') center/cover no-repeat;filter:brightness(0.25) saturate(0.7);z-index:0}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,13,11,0.85) 0%,rgba(14,13,11,0.4) 100%)}
 .hero-glow{position:absolute;top:-100px;left:-100px;width:700px;height:700px;background:radial-gradient(circle,rgba(244,99,30,0.2) 0%,transparent 70%);z-index:1;pointer-events:none}
-.hero-content{position:relative;z-index:2;max-width:720px}
+.hero-content{position:relative;z-index:2;max-width:760px}
 .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(244,99,30,0.12);border:1px solid rgba(244,99,30,0.3);color:var(--orange);font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:100px;margin-bottom:2rem}
 h1{font-family:var(--font-head);font-size:clamp(2.8rem,6vw,5rem);font-weight:800;line-height:1.06;letter-spacing:-0.03em;color:var(--white);margin-bottom:1.5rem}
 h1 em{color:var(--orange);font-style:normal}
-.hero-sub{font-size:1.15rem;color:var(--muted);max-width:520px;margin-bottom:2.5rem;font-weight:300;line-height:1.75}
+.hero-sub{font-size:1.15rem;color:var(--muted);max-width:560px;margin-bottom:2.5rem;font-weight:300;line-height:1.75}
+.hero-sub strong{color:var(--text);font-weight:600}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
 .btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--orange);color:var(--white);font-family:var(--font-body);font-size:1rem;font-weight:600;padding:0.85rem 2rem;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:background 0.2s,transform 0.15s}
 .btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px)}
@@ -49,22 +52,33 @@ h1 em{color:var(--orange);font-style:normal}
 .stat-num span{color:var(--orange)}
 .stat-label{font-size:0.82rem;color:var(--muted);margin-top:0.3rem}
 
-/* SECTIONS COMMON */
+/* SECTION COMMON */
 section{position:relative;z-index:1}
 .section-label{display:inline-flex;align-items:center;gap:0.5rem;color:var(--orange);font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem}
 .section-label::before{content:'';display:block;width:20px;height:2px;background:var(--orange);border-radius:2px}
 .section-title{font-family:var(--font-head);font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-0.025em;color:var(--white);margin-bottom:1rem}
-.section-sub{color:var(--muted);font-size:1.05rem;max-width:520px;font-weight:300;line-height:1.75}
+.section-sub{color:var(--muted);font-size:1.05rem;max-width:560px;font-weight:300;line-height:1.75}
+
+/* TRUST BAR */
+.trustbar{background:var(--dark2);border-bottom:1px solid var(--border);padding:2.5rem 5%}
+.trustbar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.trustbar-text{font-size:0.9rem;color:var(--muted);font-weight:300}
+.trustbar-text strong{color:var(--text);font-weight:600}
+.trustbar-logos{display:flex;gap:2.5rem;align-items:center;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:0.6rem;color:var(--muted);font-size:0.88rem;font-weight:500}
+.trust-item i{color:var(--orange);font-size:1.2rem}
 
 /* OVER MIJ */
 .over{padding:120px 5%}
-.over-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1200px;margin:0 auto}
+.over-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto}
 .over-img-wrap{position:relative}
-.over-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;display:block;filter:grayscale(20%)}
-.over-img-badge{position:absolute;bottom:-20px;right:-20px;background:var(--orange);color:var(--white);font-family:var(--font-head);font-weight:800;font-size:0.85rem;padding:1rem 1.4rem;border-radius:12px;line-height:1.3;text-align:center}
+.over-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;display:block;filter:grayscale(15%)}
+.over-img-badge{position:absolute;bottom:-20px;right:-20px;background:var(--orange);color:var(--white);font-family:var(--font-head);font-weight:800;font-size:0.85rem;padding:1rem 1.4rem;border-radius:12px;line-height:1.3;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
 .over-img-badge span{display:block;font-size:2rem;font-weight:800}
-.over-list{list-style:none;display:flex;flex-direction:column;gap:0.85rem;margin-top:2rem}
-.over-list li{display:flex;align-items:center;gap:0.75rem;color:var(--muted);font-size:0.95rem}
+.over-text p{color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:1.2rem;font-size:1rem}
+.over-text p strong{color:var(--text);font-weight:600}
+.over-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;margin-top:2rem}
+.over-list li{display:flex;align-items:center;gap:0.75rem;color:var(--muted);font-size:0.92rem}
 .over-list li i{color:var(--orange);font-size:1.1rem;flex-shrink:0}
 
 /* DIENSTEN */
@@ -81,8 +95,32 @@ section{position:relative;z-index:1}
 .dienst-prijs{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.85rem;color:var(--muted)}
 .dienst-prijs strong{color:var(--orange);font-weight:700}
 
+/* CASE STUDY (Pedallica) */
+.case{padding:120px 5%}
+.case-inner{max-width:1200px;margin:0 auto}
+.case-header{text-align:center;margin-bottom:4rem}
+.case-header .section-label{justify-content:center}
+.case-header .section-sub{margin:0 auto}
+.case-main{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;margin-bottom:4rem}
+.case-img{position:relative;border-radius:16px;overflow:hidden}
+.case-img img{width:100%;display:block;aspect-ratio:16/11;object-fit:cover;filter:brightness(0.85)}
+.case-img-tag{position:absolute;top:1.2rem;left:1.2rem;background:rgba(14,13,11,0.85);backdrop-filter:blur(10px);border:1px solid var(--border);color:var(--white);font-size:0.75rem;font-weight:600;padding:0.5rem 1rem;border-radius:100px;display:flex;align-items:center;gap:0.5rem}
+.case-img-tag .dot{width:7px;height:7px;background:#22c55e;border-radius:50%;box-shadow:0 0 8px #22c55e}
+.case-content h3{font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--white);margin-bottom:0.5rem}
+.case-subtitle{color:var(--orange);font-size:0.9rem;font-weight:600;margin-bottom:1.5rem}
+.case-block{margin-bottom:1.5rem}
+.case-block-label{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;display:flex;align-items:center;gap:0.5rem}
+.case-block-label i{color:var(--orange);font-size:1rem}
+.case-block p{color:var(--text);font-size:0.95rem;line-height:1.7;font-weight:300}
+.case-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;background:var(--border);border-radius:14px;overflow:hidden;margin-top:2rem}
+.case-metric{background:var(--card);padding:1.5rem;text-align:center}
+.case-metric-num{font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--orange);line-height:1}
+.case-metric-label{font-size:0.78rem;color:var(--muted);margin-top:0.4rem;font-weight:300}
+.case-features{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem}
+.case-feature{background:rgba(244,99,30,0.08);border:1px solid rgba(244,99,30,0.2);color:var(--orange);font-size:0.8rem;font-weight:500;padding:0.4rem 0.9rem;border-radius:100px;display:flex;align-items:center;gap:0.4rem}
+
 /* WERKWIJZE */
-.werkwijze{padding:100px 5%}
+.werkwijze{padding:120px 5%;background:var(--dark2)}
 .werkwijze-inner{max-width:1200px;margin:0 auto}
 .stappen-grid{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:0;align-items:start;margin:3rem 0}
 .stap{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:border-color 0.25s,transform 0.25s}
@@ -97,7 +135,7 @@ section{position:relative;z-index:1}
 .werkwijze-note i{color:var(--orange);font-size:1.1rem;flex-shrink:0;margin-top:1px}
 
 /* TECH STACK */
-.techstack{padding:100px 5%;background:var(--dark2)}
+.techstack{padding:120px 5%}
 .techstack-inner{max-width:1200px;margin:0 auto}
 .tech-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem;margin-top:3rem}
 .tech-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.75rem 1.25rem 1.5rem;text-align:center;transition:border-color 0.25s,transform 0.25s,background 0.25s}
@@ -113,11 +151,12 @@ section{position:relative;z-index:1}
 .tech-name{font-family:var(--font-head);font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:0.25rem}
 .tech-sub{font-size:0.75rem;color:var(--muted);font-weight:300;margin-bottom:1rem}
 .tech-bar{height:3px;background:rgba(255,255,255,0.07);border-radius:100px;overflow:hidden}
-.tech-fill{height:100%;background:var(--orange);border-radius:100px;transition:width 1s ease 0.3s}
+.tech-fill{height:100%;background:var(--orange);border-radius:100px}
 
 /* PORTFOLIO */
-.portfolio{padding:120px 5%}
+.portfolio{padding:120px 5%;background:var(--dark2)}
 .portfolio-header{text-align:center;margin-bottom:4rem}
+.portfolio-header .section-label{justify-content:center}
 .portfolio-header .section-sub{margin:0 auto}
 .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .portfolio-card{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/10;background:var(--dark3);cursor:pointer}
@@ -130,22 +169,43 @@ section{position:relative;z-index:1}
 .portfolio-card:hover .portfolio-desc{opacity:1;transform:translateY(0)}
 .portfolio-link{position:absolute;top:1.2rem;right:1.2rem;width:38px;height:38px;background:rgba(244,99,30,0.15);border:1px solid rgba(244,99,30,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--orange);opacity:0;transform:scale(0.85);transition:opacity 0.3s,transform 0.3s;text-decoration:none;font-size:1rem}
 .portfolio-card:hover .portfolio-link{opacity:1;transform:scale(1)}
+.portfolio-badge-demo{position:absolute;top:1.2rem;left:1.2rem;background:rgba(14,13,11,0.8);backdrop-filter:blur(8px);border:1px solid var(--border);color:var(--muted);font-size:0.68rem;font-weight:600;padding:0.3rem 0.7rem;border-radius:100px;letter-spacing:0.04em}
 .portfolio-card.featured{grid-column:span 2;aspect-ratio:16/7}
+.portfolio-card.featured .portfolio-badge-demo{background:rgba(34,197,94,0.15);border-color:rgba(34,197,94,0.3);color:#22c55e}
 
 /* WAAROM */
 .waarom{padding:120px 5%}
-.waarom-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1200px;margin:0 auto}
+.waarom-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto}
 .waarom-img{position:relative}
 .waarom-img img{width:100%;border-radius:16px;object-fit:cover;aspect-ratio:1;display:block;filter:grayscale(15%)}
 .waarom-img-overlay{position:absolute;inset:0;border-radius:16px;background:linear-gradient(135deg,transparent 50%,rgba(244,99,30,0.15))}
-.waarom-points{display:flex;flex-direction:column;gap:2rem;margin-top:2.5rem}
+.waarom-points{display:flex;flex-direction:column;gap:1.75rem;margin-top:2.5rem}
 .waarom-point{display:flex;gap:1.2rem;align-items:flex-start}
 .waarom-num{width:36px;height:36px;background:var(--orange-glow);border:1px solid rgba(244,99,30,0.25);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:0.85rem;font-weight:800;color:var(--orange);flex-shrink:0;margin-top:2px}
 .waarom-point-title{font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.3rem}
 .waarom-point-desc{font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.65}
 
+/* VERGELIJKING */
+.vergelijk{padding:120px 5%;background:var(--dark2)}
+.vergelijk-inner{max-width:1000px;margin:0 auto}
+.vergelijk-header{text-align:center;margin-bottom:3.5rem}
+.vergelijk-header .section-label{justify-content:center}
+.vergelijk-header .section-sub{margin:0 auto}
+.vergelijk-table{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.vergelijk-row{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid var(--border)}
+.vergelijk-row:last-child{border-bottom:none}
+.vergelijk-row.head{background:var(--dark3)}
+.vergelijk-cell{padding:1.1rem 1.5rem;display:flex;align-items:center;font-size:0.9rem}
+.vergelijk-cell.feature{color:var(--text);font-weight:500}
+.vergelijk-cell.head-label{font-family:var(--font-head);font-weight:700;color:var(--white);font-size:0.9rem}
+.vergelijk-cell.head-web{color:var(--orange)}
+.vergelijk-cell.center{justify-content:center}
+.vergelijk-cell i.yes{color:#22c55e;font-size:1.3rem}
+.vergelijk-cell i.no{color:#ef4444;opacity:0.6;font-size:1.3rem}
+.vergelijk-web-col{background:rgba(244,99,30,0.04)}
+
 /* REFERENTIES */
-.referenties{padding:120px 5%;background:var(--dark2)}
+.referenties{padding:120px 5%}
 .ref-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;flex-wrap:wrap;gap:2rem}
 .ref-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 .ref-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:2.2rem;transition:border-color 0.25s}
@@ -157,9 +217,24 @@ section{position:relative;z-index:1}
 .ref-name{font-family:var(--font-head);font-size:0.95rem;font-weight:700;color:var(--white)}
 .ref-role{font-size:0.8rem;color:var(--muted);font-weight:300}
 
+/* FAQ */
+.faq{padding:120px 5%;background:var(--dark2)}
+.faq-inner{max-width:820px;margin:0 auto}
+.faq-header{text-align:center;margin-bottom:3.5rem}
+.faq-header .section-label{justify-content:center}
+.faq-list{display:flex;flex-direction:column;gap:1rem}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color 0.25s}
+.faq-item:hover{border-color:rgba(244,99,30,0.25)}
+.faq-q{padding:1.4rem 1.6rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--white);gap:1rem}
+.faq-q i{color:var(--orange);font-size:1.3rem;transition:transform 0.25s;flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease;color:var(--muted);font-size:0.92rem;line-height:1.75;font-weight:300}
+.faq-a-inner{padding:0 1.6rem 1.5rem}
+.faq-item.open .faq-a{max-height:300px}
+
 /* CTA */
 .cta-section{padding:100px 5%;position:relative;overflow:hidden;text-align:center}
-.cta-section::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1800&q=80') center/cover no-repeat;filter:brightness(0.1) saturate(0.5);z-index:0}
+.cta-section::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=1800&q=80') center/cover no-repeat;filter:brightness(0.12) saturate(0.6);z-index:0}
 .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(244,99,30,0.2) 0%,transparent 70%);z-index:1;pointer-events:none}
 .cta-content{position:relative;z-index:2;max-width:620px;margin:0 auto}
 .cta-content h2{font-family:var(--font-head);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--white);letter-spacing:-0.03em;line-height:1.1;margin-bottom:1.25rem}
@@ -187,13 +262,13 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
 /* RESPONSIVE */
 @media(max-width:1024px){
   #ham-btn{display:block!important}
-  .nav-links{display:none!important;position:fixed;top:68px;left:0;right:0;flex-direction:column;background:rgba(14,13,11,0.98);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);z-index:99;padding:0.5rem 0;margin:0;list-style:none}
+  .nav-links{display:none!important;position:fixed;top:68px;left:0;right:0;flex-direction:column;background:rgba(14,13,11,0.98);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);z-index:99;padding:0.5rem 0;margin:0;list-style:none;align-items:stretch}
   .nav-links.nav-open{display:flex!important}
   .nav-links li{border-bottom:1px solid var(--border)}
   .nav-links li:last-child{border:none}
   .nav-links a{display:block;padding:1rem 5%;font-size:1rem;color:var(--muted)}
   .nav-cta{color:var(--orange)!important;background:none!important;border-radius:0!important;padding:1rem 5%!important}
-  .over-inner,.waarom-inner{grid-template-columns:1fr;gap:3rem}
+  .over-inner,.waarom-inner,.case-main{grid-template-columns:1fr;gap:3rem}
   .over-img-wrap{order:-1}
   .stappen-grid{grid-template-columns:1fr;gap:1rem}
   .stap-arrow{transform:rotate(90deg);margin:0 auto;padding:0}
@@ -202,16 +277,19 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
   .ref-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .tech-grid{grid-template-columns:repeat(3,1fr)}
+  .case-metrics{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
   .diensten-grid{grid-template-columns:1fr!important}
+  .over-list{grid-template-columns:1fr}
   .portfolio-grid{grid-template-columns:1fr}
   .portfolio-card.featured{grid-column:span 1;aspect-ratio:16/10}
-  .hero-stats{flex-wrap:wrap}
+  .hero-stats{gap:1.5rem}
   .cta-form{flex-direction:column}
   .footer-grid{grid-template-columns:1fr}
   .tech-grid{grid-template-columns:repeat(2,1fr)}
-  .ref-grid{grid-template-columns:1fr}
+  .vergelijk-row{grid-template-columns:1.5fr 1fr 1fr}
+  .vergelijk-cell{padding:0.9rem 0.8rem;font-size:0.82rem}
 }
 </style>
 </head>
@@ -222,13 +300,12 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
   <ul class="nav-links" id="nav-links">
     <li><a href="#over" onclick="closeNav()">Over mij</a></li>
     <li><a href="#diensten" onclick="closeNav()">Diensten</a></li>
+    <li><a href="#pedallica" onclick="closeNav()">Pedallica</a></li>
     <li><a href="#portfolio" onclick="closeNav()">Portfolio</a></li>
     <li><a href="#contact" onclick="closeNav()">Contact</a></li>
     <li><a href="#contact" class="nav-cta" onclick="closeNav()">Gratis offerte</a></li>
   </ul>
-  <button id="ham-btn" onclick="toggleNav()" aria-label="Menu">
-    <i class="ti ti-menu-2" id="ham-icon"></i>
-  </button>
+  <button id="ham-btn" onclick="toggleNav()" aria-label="Menu"><i class="ti ti-menu-2" id="ham-icon"></i></button>
 </nav>
 
 <!-- HERO -->
@@ -236,38 +313,54 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
   <div class="hero-bg"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
-    <div class="hero-badge"><i class="ti ti-map-pin"></i> Gevestigd in Vlaams-Brabant</div>
-    <h1>Jouw bedrijf<br>verdient een <em>website</em><br>die werkt</h1>
-    <p class="hero-sub">WebCraft bouwt professionele websites voor kappers, bakkers, sportclubs en zelfstandigen in Vlaams-Brabant. Betaalbaar, snel en op maat.</p>
+    <div class="hero-badge"><i class="ti ti-map-pin"></i> Vlaams-Brabant & Pajottenland</div>
+    <h1>Websites die<br>jouw club <em>professioneel</em><br>laten overkomen</h1>
+    <p class="hero-sub">WebCraft bouwt <strong>maatwerk-webapplicaties</strong> voor sportclubs, verenigingen en lokale bedrijven. Geen sjabloon, maar echte code in Laravel &amp; MySQL — gebouwd door iemand die zelf in een club zit.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary"><i class="ti ti-rocket"></i> Start jouw project</a>
-      <a href="#portfolio" class="btn-ghost"><i class="ti ti-eye"></i> Bekijk ons werk</a>
+      <a href="#contact" class="btn-primary"><i class="ti ti-rocket"></i> Gratis kennismaking</a>
+      <a href="#pedallica" class="btn-ghost"><i class="ti ti-eye"></i> Bekijk Pedallica live</a>
     </div>
     <div class="hero-stats">
-      <div><div class="stat-num">10<span>+</span></div><div class="stat-label">Projecten afgerond</div></div>
-      <div><div class="stat-num">100<span>%</span></div><div class="stat-label">Tevreden klanten</div></div>
-      <div><div class="stat-num">2<span>wk</span></div><div class="stat-label">Gemiddelde levertijd</div></div>
+      <div><div class="stat-num">5<span>jaar</span></div><div class="stat-label">Programmeerervaring</div></div>
+      <div><div class="stat-num">70<span>+</span></div><div class="stat-label">Leden op Pedallica</div></div>
+      <div><div class="stat-num">100<span>%</span></div><div class="stat-label">Maatwerk, geen sjabloon</div></div>
     </div>
   </div>
 </section>
+
+<!-- TRUST BAR -->
+<div class="trustbar">
+  <div class="trustbar-inner">
+    <div class="trustbar-text"><strong>Gebouwd met professionele technologie:</strong></div>
+    <div class="trustbar-logos">
+      <div class="trust-item"><i class="ti ti-brand-laravel"></i> Laravel</div>
+      <div class="trust-item"><i class="ti ti-brand-php"></i> PHP</div>
+      <div class="trust-item"><i class="ti ti-database"></i> MySQL</div>
+      <div class="trust-item"><i class="ti ti-device-mobile"></i> Responsive</div>
+      <div class="trust-item"><i class="ti ti-shield-check"></i> GDPR-bewust</div>
+    </div>
+  </div>
+</div>
 
 <!-- OVER MIJ -->
 <section class="over" id="over">
   <div class="over-inner">
     <div class="over-img-wrap">
-      <img class="over-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" alt="Webdeveloper aan het werk">
-      <div class="over-img-badge"><span>2+</span> jaar ervaring</div>
+      <img class="over-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Jarno Janssens, freelance webdeveloper">
+      <div class="over-img-badge"><span>5</span> jaar code</div>
     </div>
-    <div>
+    <div class="over-text">
       <div class="section-label">Over WebCraft</div>
-      <h2 class="section-title">Lokale expertise,<br>digitale resultaten</h2>
-      <p class="section-sub">Ik ben Jarno, student Toegepaste Informatica aan de Erasmushogeschool Brussel en freelance webdeveloper. Ik bouw websites die er niet alleen mooi uitzien — ze <em>werken</em>.</p>
+      <h2 class="section-title">Ik bouw geen sjablonen.<br>Ik bouw oplossingen.</h2>
+      <p>Ik ben <strong>Jarno Janssens</strong>, student Toegepaste Informatica aan de Erasmushogeschool Brussel en freelance webdeveloper uit de regio Liedekerke. Ik programmeer al <strong>5 jaar</strong> in vijf talen en bouw websites die er niet alleen goed uitzien — ze lossen een echt probleem op.</p>
+      <p>WebCraft ontstond niet uit een businessplan, maar uit een concreet project: <strong>Pedallica</strong>, een volledige webapplicatie voor mijn eigen wielerclub. Toen bestuursleden van andere clubs het zagen, kwam telkens dezelfde vraag: "kan jij zoiets ook voor ons maken?" Zo begon WebCraft.</p>
       <ul class="over-list">
-        <li><i class="ti ti-check"></i> Gespecialiseerd in Laravel, PHP en MySQL</li>
-        <li><i class="ti ti-check"></i> Ervaring met sportclubs (zie Pedallica)</li>
-        <li><i class="ti ti-check"></i> Persoonlijk contact — geen groot bureau</li>
-        <li><i class="ti ti-check"></i> Gebaseerd in Vlaams-Brabant</li>
-        <li><i class="ti ti-check"></i> Betaalbare tarieven voor lokale bedrijven</li>
+        <li><i class="ti ti-check"></i> Laravel, PHP, MySQL &amp; meer</li>
+        <li><i class="ti ti-check"></i> Zelf actief clublid</li>
+        <li><i class="ti ti-check"></i> Persoonlijk contact, geen bureau</li>
+        <li><i class="ti ti-check"></i> Eerlijke prijzen voor clubkassen</li>
+        <li><i class="ti ti-check"></i> Jij blijft eigenaar van je data</li>
+        <li><i class="ti ti-check"></i> Gevestigd in Vlaams-Brabant</li>
       </ul>
       <div style="margin-top:2.5rem"><a href="#contact" class="btn-primary"><i class="ti ti-message"></i> Neem contact op</a></div>
     </div>
@@ -279,28 +372,78 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
   <div class="diensten-header">
     <div>
       <div class="section-label">Wat ik doe</div>
-      <h2 class="section-title">Alles wat jouw<br>website nodig heeft</h2>
+      <h2 class="section-title">Van clubwebsite tot<br>volledige webapplicatie</h2>
     </div>
-    <p class="section-sub">Van een eenvoudige visitekaartjesite tot een volledig maatwerk webapplicatie.</p>
+    <p class="section-sub">Of je nu een verzorgd digitaal visitekaartje nodig hebt of een app met ledenbeheer — ik lever maatwerk op jouw maat.</p>
   </div>
   <div class="diensten-grid">
     <div class="dienst-card">
-      <div class="dienst-icon"><i class="ti ti-layout-dashboard"></i></div>
-      <div class="dienst-title">Maatwerk websites</div>
-      <div class="dienst-desc">Uniek design op maat van jouw merk en doelgroep. Geen templates, geen compromissen — echte code gebouwd in Laravel en PHP.</div>
-      <div class="dienst-prijs">Vanaf <strong>€499</strong></div>
+      <div class="dienst-icon"><i class="ti ti-trophy"></i></div>
+      <div class="dienst-title">Clubwebsites &amp; webapps</div>
+      <div class="dienst-desc">Ledenbeheer, evenementenkalender, fotogalerij en nieuws — precies wat een club levend houdt. Op maat gebouwd zoals Pedallica.</div>
+      <div class="dienst-prijs">Vanaf <strong>€900</strong></div>
     </div>
     <div class="dienst-card">
-      <div class="dienst-icon"><i class="ti ti-device-mobile"></i></div>
-      <div class="dienst-title">Responsive design</div>
-      <div class="dienst-desc">Jouw website ziet er perfect uit op elk scherm — desktop, tablet en smartphone. Standaard inbegrepen in elk project.</div>
-      <div class="dienst-prijs">Inbegrepen in elk project</div>
+      <div class="dienst-icon"><i class="ti ti-layout-dashboard"></i></div>
+      <div class="dienst-title">Websites voor bedrijven</div>
+      <div class="dienst-desc">Voor zelfstandigen, kappers, bakkers en lokale zaken: een verzorgde, snelle website die er professioneel uitziet en klanten aantrekt.</div>
+      <div class="dienst-prijs">Vanaf <strong>€500</strong></div>
     </div>
     <div class="dienst-card">
       <div class="dienst-icon"><i class="ti ti-tool"></i></div>
-      <div class="dienst-title">Onderhoud & hosting</div>
-      <div class="dienst-desc">Ik zorg dat jouw website online blijft, snel laadt en up-to-date is. Jij focust op jouw zaak, ik op jouw website.</div>
-      <div class="dienst-prijs">Vanaf <strong>€25/maand</strong></div>
+      <div class="dienst-title">Onderhoud &amp; hosting</div>
+      <div class="dienst-desc">Ik zorg dat je website online blijft, veilig is en up-to-date. Jij focust op je club of zaak, ik op de techniek.</div>
+      <div class="dienst-prijs">Vanaf <strong>€40/maand</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY: PEDALLICA -->
+<section class="case" id="pedallica">
+  <div class="case-inner">
+    <div class="case-header">
+      <div class="section-label">Uitgelichte case</div>
+      <h2 class="section-title">Pedallica</h2>
+      <p class="section-sub">Mijn sterkste bewijs: geen schoolopdracht die in een la verdween, maar een echte webapplicatie die dagelijks gebruikt wordt.</p>
+    </div>
+    <div class="case-main">
+      <div class="case-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" alt="Pedallica wielerclub webapplicatie">
+        <div class="case-img-tag"><span class="dot"></span> Live in productie op FutureWeb</div>
+      </div>
+      <div class="case-content">
+        <h3>Een complete clubwebapp</h3>
+        <div class="case-subtitle">Wielerclub · Laravel · MySQL</div>
+        <div class="case-block">
+          <div class="case-block-label"><i class="ti ti-alert-circle"></i> Het probleem</div>
+          <p>De club hield ledenlijsten bij in Excel, communiceerde via WhatsApp en Facebook, en had geen centraal overzicht. Ritten inschrijven en teambeheer verliep chaotisch en kostte vrijwilligers veel tijd.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label"><i class="ti ti-bulb"></i> De oplossing</div>
+          <p>Een maatwerk-webapplicatie met login, ledenbeheer, ritten inschrijven én aanmaken, een evenementenkalender, teambeheer en een fotogalerij. Alles op één plek, toegankelijk vanop elk toestel.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-block-label"><i class="ti ti-trophy"></i> Het resultaat</div>
+          <p>De club gebruikt Pedallica vandaag live. Leden loggen in, schrijven zich in voor ritten en bekijken foto's. Het draait al meer dan 6 maanden zonder problemen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="case-metrics">
+      <div class="case-metric"><div class="case-metric-num">70+</div><div class="case-metric-label">Actieve leden</div></div>
+      <div class="case-metric"><div class="case-metric-num">6+</div><div class="case-metric-label">Maanden live</div></div>
+      <div class="case-metric"><div class="case-metric-num">7</div><div class="case-metric-label">Modules</div></div>
+      <div class="case-metric"><div class="case-metric-num">100%</div><div class="case-metric-label">Maatwerk</div></div>
+    </div>
+    <div class="case-features">
+      <div class="case-feature"><i class="ti ti-login"></i> Login &amp; ledenbeheer</div>
+      <div class="case-feature"><i class="ti ti-calendar"></i> Evenementenkalender</div>
+      <div class="case-feature"><i class="ti ti-bike"></i> Ritten inschrijven</div>
+      <div class="case-feature"><i class="ti ti-users"></i> Teambeheer</div>
+      <div class="case-feature"><i class="ti ti-photo"></i> Fotogalerij</div>
+      <div class="case-feature"><i class="ti ti-news"></i> Nieuws &amp; events</div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <a href="pedallica.html" target="_blank" class="btn-primary"><i class="ti ti-external-link"></i> Bekijk Pedallica demo</a>
     </div>
   </div>
 </section>
@@ -310,13 +453,13 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
   <div class="werkwijze-inner">
     <div class="section-label">Werkwijze</div>
     <h2 class="section-title">Van idee tot eindresultaat</h2>
-    <p class="section-sub">Veel communicatie = beter werk. Ik werk stap voor stap samen met jou zodat het eindresultaat exact is wat jij voor ogen had.</p>
+    <p class="section-sub">Veel communicatie = beter werk. Ik werk stap voor stap samen met jou zodat het eindresultaat exact is wat je voor ogen had.</p>
     <div class="stappen-grid">
       <div class="stap">
         <div class="stap-num">01</div>
         <div class="stap-icon"><i class="ti ti-messages"></i></div>
         <h3 class="stap-title">Gesprek</h3>
-        <p class="stap-desc">We bespreken jouw wensen, doelgroep en budget. Geen technisch jargon — gewoon een eerlijk gesprek.</p>
+        <p class="stap-desc">We bespreken je wensen, doelgroep en budget. Geen technisch jargon — gewoon een eerlijk gesprek.</p>
         <div class="stap-tag">Gratis · Vrijblijvend</div>
       </div>
       <div class="stap-arrow"><i class="ti ti-arrow-right"></i></div>
@@ -331,22 +474,22 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
       <div class="stap">
         <div class="stap-num">03</div>
         <div class="stap-icon"><i class="ti ti-adjustments"></i></div>
-        <h3 class="stap-title">Verbeterde versie</h3>
-        <p class="stap-desc">Op basis van jouw feedback verfijn ik het design en de functionaliteiten tot alles klopt.</p>
+        <h3 class="stap-title">Verfijning</h3>
+        <p class="stap-desc">Op basis van je feedback verfijn ik het design en de functionaliteiten tot alles klopt.</p>
         <div class="stap-tag">Jouw feedback centraal</div>
       </div>
       <div class="stap-arrow"><i class="ti ti-arrow-right"></i></div>
       <div class="stap">
         <div class="stap-num">04</div>
         <div class="stap-icon"><i class="ti ti-circle-check"></i></div>
-        <h3 class="stap-title">Eindresultaat</h3>
-        <p class="stap-desc">Jouw website gaat live. Ik zorg voor hosting, domein en een laatste controle.</p>
-        <div class="stap-tag">Live & klaar</div>
+        <h3 class="stap-title">Live &amp; onderhoud</h3>
+        <p class="stap-desc">Je website gaat live. Ik zorg voor hosting, domein en blijf beschikbaar voor support.</p>
+        <div class="stap-tag">Blijvende steun</div>
       </div>
     </div>
     <div class="werkwijze-note">
       <i class="ti ti-info-circle"></i>
-      <span>Doorheen het hele proces communiceren we regelmatig via WhatsApp, mail of videocall — zodat er nooit verrassingen zijn.</span>
+      <span>Doorheen het hele proces communiceren we regelmatig via WhatsApp, mail of videocall — zodat er nooit verrassingen zijn en jij altijd weet waar je aan toe bent.</span>
     </div>
   </div>
 </section>
@@ -356,52 +499,40 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
   <div class="techstack-inner">
     <div class="section-label">Technologieën</div>
     <h2 class="section-title">Gebouwd met de juiste tools</h2>
-    <p class="section-sub">Ik werk met bewezen, professionele technologieën — geen drag-and-drop builders, maar echte code.</p>
+    <p class="section-sub">Dezelfde professionele technologie als grote webbureaus — maar dan persoonlijk en betaalbaar. Geen drag-and-drop builders.</p>
     <div class="tech-grid">
       <div class="tech-card">
-        <div class="tech-logo tech-laravel">
-          <svg viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M49.626 11.564a.809.809 0 0 1 .028.209v10.25a.8.8 0 0 1-.402.694l-8.602 4.966v9.847c0 .287-.152.55-.4.694L22.96 48.257c-.049.027-.1.04-.153.06-.024.013-.049.036-.078.048a.779.779 0 0 1-.413 0c-.031-.012-.056-.035-.084-.048-.048-.02-.096-.033-.142-.06L4.402 37.98a.8.8 0 0 1-.4-.694V6.779c0-.072.01-.142.028-.21.006-.023.02-.044.028-.067.015-.042.029-.085.051-.124.015-.026.037-.047.055-.071.023-.032.044-.065.071-.093.023-.022.053-.04.079-.06.029-.024.055-.05.088-.069h.001l9.2-5.304a.8.8 0 0 1 .8 0l9.2 5.303V1.68c0-.288.152-.55.4-.694L32.358.027a.8.8 0 0 1 .8 0l16.287 9.393c.053.03.1.065.144.105.015.014.022.033.035.048.03.033.06.066.082.104.019.033.03.069.044.105.012.03.025.058.031.09z" fill="currentColor"/></svg>
-        </div>
+        <div class="tech-logo tech-laravel"><svg viewBox="0 0 50 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M49.626 11.564a.809.809 0 0 1 .028.209v10.25a.8.8 0 0 1-.402.694l-8.602 4.966v9.847c0 .287-.152.55-.4.694L22.96 48.257c-.049.027-.1.04-.153.06-.024.013-.049.036-.078.048a.779.779 0 0 1-.413 0c-.031-.012-.056-.035-.084-.048-.048-.02-.096-.033-.142-.06L4.402 37.98a.8.8 0 0 1-.4-.694V6.779c0-.072.01-.142.028-.21.006-.023.02-.044.028-.067.015-.042.029-.085.051-.124.015-.026.037-.047.055-.071.023-.032.044-.065.071-.093.023-.022.053-.04.079-.06.029-.024.055-.05.088-.069h.001l9.2-5.304a.8.8 0 0 1 .8 0l9.2 5.303V1.68c0-.288.152-.55.4-.694L32.358.027a.8.8 0 0 1 .8 0l16.287 9.393c.053.03.1.065.144.105.015.014.022.033.035.048.03.033.06.066.082.104.019.033.03.069.044.105.012.03.025.058.031.09z" fill="currentColor"/></svg></div>
         <div class="tech-name">Laravel</div>
         <div class="tech-sub">PHP Framework</div>
         <div class="tech-bar"><div class="tech-fill" style="width:90%"></div></div>
       </div>
       <div class="tech-card">
-        <div class="tech-logo tech-php">
-          <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 33.039c-33.74 0-61.094 13.862-61.094 30.961s27.354 30.961 61.094 30.961 61.094-13.862 61.094-30.961-27.354-30.961-61.094-30.961zm-15.897 35.983l-2.755 14.089H39.86l2.688-13.747c.178-.911.27-1.836.27-2.575 0-2.927-1.601-4.367-4.748-4.367H32.6l-3.456 20.689H23.16L28.9 55.15h15.83c7.143 0 10.727 3.145 10.727 8.99a19.9 19.9 0 0 1-.354 3.882zm28.916 14.089h-5.792l.511-3.127c-2.025 2.398-4.791 3.627-8.153 3.627-6.032 0-9.594-3.748-9.594-10.256 0-8.74 5.533-14.698 13.525-14.698 3.783 0 6.507 1.499 7.896 4.208l2.025-10.364h5.857l-6.275 30.61zm30.35-18.74h-6.357c.421-2.105-.37-2.879-2.774-2.879-2.586 0-4.371.937-5.332 2.812l-2.77 14.186c-.146.755-.222 1.424-.222 1.918 0 1.805 1.139 2.728 3.425 2.728 2.694 0 4.729-1.194 5.518-3.244h6.36c-1.579 5.217-6.168 8.229-13.164 8.229-6.617 0-10.053-2.906-10.053-8.367 0-.928.117-1.962.352-3.107l2.412-12.344c1.435-7.307 5.975-10.899 13.849-10.899 6.548 0 10.058 2.982 10.058 8.402 0 .631-.09 1.343-.302 2.565zm-40.237 6.254c-.49 2.693-2.645 4.366-5.528 4.366-2.906 0-4.312-1.673-3.82-4.366.466-2.563 2.644-4.27 5.526-4.27 2.929 0 4.312 1.707 3.822 4.27z" fill="currentColor"/></svg>
-        </div>
+        <div class="tech-logo tech-php"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 33.039c-33.74 0-61.094 13.862-61.094 30.961s27.354 30.961 61.094 30.961 61.094-13.862 61.094-30.961-27.354-30.961-61.094-30.961zm-15.897 35.983l-2.755 14.089H39.86l2.688-13.747c.178-.911.27-1.836.27-2.575 0-2.927-1.601-4.367-4.748-4.367H32.6l-3.456 20.689H23.16L28.9 55.15h15.83c7.143 0 10.727 3.145 10.727 8.99a19.9 19.9 0 0 1-.354 3.882zm28.916 14.089h-5.792l.511-3.127c-2.025 2.398-4.791 3.627-8.153 3.627-6.032 0-9.594-3.748-9.594-10.256 0-8.74 5.533-14.698 13.525-14.698 3.783 0 6.507 1.499 7.896 4.208l2.025-10.364h5.857l-6.275 30.61zm30.35-18.74h-6.357c.421-2.105-.37-2.879-2.774-2.879-2.586 0-4.371.937-5.332 2.812l-2.77 14.186c-.146.755-.222 1.424-.222 1.918 0 1.805 1.139 2.728 3.425 2.728 2.694 0 4.729-1.194 5.518-3.244h6.36c-1.579 5.217-6.168 8.229-13.164 8.229-6.617 0-10.053-2.906-10.053-8.367 0-.928.117-1.962.352-3.107l2.412-12.344c1.435-7.307 5.975-10.899 13.849-10.899 6.548 0 10.058 2.982 10.058 8.402 0 .631-.09 1.343-.302 2.565zm-40.237 6.254c-.49 2.693-2.645 4.366-5.528 4.366-2.906 0-4.312-1.673-3.82-4.366.466-2.563 2.644-4.27 5.526-4.27 2.929 0 4.312 1.707 3.822 4.27z" fill="currentColor"/></svg></div>
         <div class="tech-name">PHP</div>
         <div class="tech-sub">Backend taal</div>
         <div class="tech-bar"><div class="tech-fill" style="width:88%"></div></div>
       </div>
       <div class="tech-card">
-        <div class="tech-logo tech-html">
-          <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"/><path fill="currentColor" d="M64 116.8l36.378-10.086 8.559-95.878H64z" opacity=".3"/><path fill="white" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.801l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"/><path fill="white" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.336-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"/></svg>
-        </div>
+        <div class="tech-logo tech-html"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"/><path fill="currentColor" d="M64 116.8l36.378-10.086 8.559-95.878H64z" opacity=".3"/><path fill="white" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.801l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"/><path fill="white" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.336-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"/></svg></div>
         <div class="tech-name">HTML / CSS</div>
         <div class="tech-sub">Frontend basis</div>
         <div class="tech-bar"><div class="tech-fill" style="width:92%"></div></div>
       </div>
       <div class="tech-card">
-        <div class="tech-logo tech-js">
-          <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M2 1h125v125H2z"/><path fill="white" d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.045 2.321-4.045 2.321-9.178 5.gallons-.893 1.482-.572 2.498 0 3.475 1.268 2.047 1.898 2.83 3.563 4.09 5.854 4.36 12.354 6.524 27.541 5.712 10.473-1.928 15.545-7.847 16.056-15.854zm-46.094-58.089c-7.555-4.891-17.504-6.902-27.184-4.224-3.867 1.137-7.236 3.273-9.691 6.289-5.426 6.879-3.81 17.944 2.724 22.66 6.96 5.283 17.427 6.448 18.714 11.391 1.185 5.712-3.652 7.699-9.378 6.948-4.09-.946-6.369-3.106-8.827-6.949-3.995 2.309-3.995 2.309-9.014 5.2-.869 1.518-.521 2.473 0 3.463 1.245 2.023 1.863 2.819 3.512 4.067 5.776 4.295 12.218 6.441 27.166 5.637 10.41-1.968 15.38-7.802 15.887-15.736.5-8.474-2.809-13.509-9.993-17.669-4.581-2.475-14.765-5.337-16.504-9.993-.975-3.069.452-6.099 3.749-7.02 2.285-.606 4.378-.155 6.903 1.394 1.745 1.072 2.975 2.273 4.224 4.58 4.331-2.82 4.33-2.82 9.058-5.854-.952-1.745-1.636-2.696-2.346-3.584z"/></svg>
-        </div>
+        <div class="tech-logo tech-js" style="font-size:1.8rem;font-weight:900;font-family:monospace;color:#F7DF1E">JS</div>
         <div class="tech-name">JavaScript</div>
         <div class="tech-sub">Frontend logica</div>
         <div class="tech-bar"><div class="tech-fill" style="width:80%"></div></div>
       </div>
       <div class="tech-card">
-        <div class="tech-logo tech-java">
-          <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.48-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/><path fill="currentColor" d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.766c-6.559-9.207-11.587-13.775 15.635-29.568 0 .001-42.731 10.67-22.324 34.164z"/><path fill="currentColor" d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zm40.697 22.747c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725 0-.002.359-.327.468-.617z"/><path fill="currentColor" d="M76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587z"/><path fill="currentColor" d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"/></svg>
-        </div>
+        <div class="tech-logo tech-java"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.48-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/><path fill="currentColor" d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.766c-6.559-9.207-11.587-13.775 15.635-29.568 0 .001-42.731 10.67-22.324 34.164z"/><path fill="currentColor" d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zm40.697 22.747c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725 0-.002.359-.327.468-.617z"/><path fill="currentColor" d="M76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587z"/><path fill="currentColor" d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"/></svg></div>
         <div class="tech-name">Java</div>
-        <div class="tech-sub">Android / Kotlin</div>
-        <div class="tech-bar"><div class="tech-fill" style="width:72%"></div></div>
+        <div class="tech-sub">Applicaties</div>
+        <div class="tech-bar"><div class="tech-fill" style="width:75%"></div></div>
       </div>
       <div class="tech-card">
-        <div class="tech-logo tech-sql">
-          <i class="ti ti-database" style="font-size:2rem"></i>
-        </div>
+        <div class="tech-logo tech-sql"><i class="ti ti-database" style="font-size:2rem"></i></div>
         <div class="tech-name">SQL / MySQL</div>
         <div class="tech-sub">Database</div>
         <div class="tech-bar"><div class="tech-fill" style="width:85%"></div></div>
@@ -414,21 +545,33 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
 <section class="portfolio" id="portfolio">
   <div class="portfolio-header">
     <div class="section-label">Portfolio</div>
-    <h2 class="section-title">Recent werk</h2>
-    <p class="section-sub">Een greep uit de projecten die ik heb gebouwd voor lokale klanten en organisaties.</p>
+    <h2 class="section-title">Voorbeelden van mijn werk</h2>
+    <p class="section-sub">Pedallica draait live in productie. Daarnaast toon ik hieronder demo-ontwerpen die laten zien wat ik voor verschillende types klanten kan bouwen.</p>
   </div>
   <div class="portfolio-grid">
     <div class="portfolio-card featured">
       <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" alt="Pedallica">
+      <div class="portfolio-badge-demo">● Live project</div>
       <div class="portfolio-overlay">
         <div class="portfolio-tag">Wielerclub · Laravel · MySQL</div>
         <div class="portfolio-name">Pedallica</div>
-        <div class="portfolio-desc">Volledig maatwerk webapplicatie voor een wielerclub met ploegbeheer, fotogalerij en evenementenkalender. Live in productie.</div>
+        <div class="portfolio-desc">Volledige maatwerk webapplicatie met ledenbeheer, ritten, fotogalerij en evenementenkalender. Live in productie.</div>
       </div>
       <a href="pedallica.html" target="_blank" class="portfolio-link"><i class="ti ti-external-link"></i></a>
     </div>
     <div class="portfolio-card">
+      <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&q=80" alt="Voetbalclub">
+      <div class="portfolio-badge-demo">Demo</div>
+      <div class="portfolio-overlay">
+        <div class="portfolio-tag">Voetbalclub · Webapplicatie</div>
+        <div class="portfolio-name">FC Pintalona</div>
+        <div class="portfolio-desc">Wedstrijdresultaten, klassement, spelersprofielen en nieuwspagina.</div>
+      </div>
+      <a href="voetbal.html" target="_blank" class="portfolio-link"><i class="ti ti-external-link"></i></a>
+    </div>
+    <div class="portfolio-card">
       <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80" alt="Barbershop">
+      <div class="portfolio-badge-demo">Demo</div>
       <div class="portfolio-overlay">
         <div class="portfolio-tag">Kapper · Website</div>
         <div class="portfolio-name">Barbershop Sven</div>
@@ -438,6 +581,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
     </div>
     <div class="portfolio-card">
       <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Restaurant">
+      <div class="portfolio-badge-demo">Demo</div>
       <div class="portfolio-overlay">
         <div class="portfolio-tag">Horeca · Website</div>
         <div class="portfolio-name">Bistro Maison</div>
@@ -446,16 +590,8 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
       <a href="restaurant.html" target="_blank" class="portfolio-link"><i class="ti ti-external-link"></i></a>
     </div>
     <div class="portfolio-card">
-      <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80" alt="Voetbal">
-      <div class="portfolio-overlay">
-        <div class="portfolio-tag">Voetbalclub · Webapplicatie</div>
-        <div class="portfolio-name">FC Pintalona</div>
-        <div class="portfolio-desc">Wedstrijdresultaten, spelersprofielen en nieuwspagina.</div>
-      </div>
-      <a href="voetbal.html" target="_blank" class="portfolio-link"><i class="ti ti-external-link"></i></a>
-    </div>
-    <div class="portfolio-card">
       <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80" alt="Bakker">
+      <div class="portfolio-badge-demo">Demo</div>
       <div class="portfolio-overlay">
         <div class="portfolio-tag">Bakkerij · Website</div>
         <div class="portfolio-name">Bakkerij De Gouden Aar</div>
@@ -470,29 +606,72 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
 <section class="waarom" id="waarom">
   <div class="waarom-inner">
     <div class="waarom-img">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Webdevelopment">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Waarom WebCraft">
       <div class="waarom-img-overlay"></div>
     </div>
     <div>
       <div class="section-label">Waarom WebCraft</div>
-      <h2 class="section-title">Geen bureau.<br>Wél resultaat.</h2>
+      <h2 class="section-title">Bewijs in plaats<br>van beloftes</h2>
       <div class="waarom-points">
         <div class="waarom-point">
           <div class="waarom-num">01</div>
-          <div><div class="waarom-point-title">Persoonlijk en betrokken</div><div class="waarom-point-desc">Jij spreekt rechtstreeks met de developer. Geen tussenpersonen, geen miscommunicatie.</div></div>
+          <div><div class="waarom-point-title">Een live product als bewijs</div><div class="waarom-point-desc">Pedallica draait echt. Je kan het zien, gebruiken en bellen naar de club voor een referentie. Geen mockup, maar een werkend systeem.</div></div>
         </div>
         <div class="waarom-point">
           <div class="waarom-num">02</div>
-          <div><div class="waarom-point-title">Lokale kennis van Vlaams-Brabant</div><div class="waarom-point-desc">Ik ken de regio en de markt. Dat merk je aan hoe ik jouw website positioneer.</div></div>
+          <div><div class="waarom-point-title">Clubkennis van binnenuit</div><div class="waarom-point-desc">Ik ben zelf clublid. Ik weet wat een bestuur nodig heeft, welke chaos ledenbeheer geeft en waarom een evenementenkalender écht telt.</div></div>
         </div>
         <div class="waarom-point">
           <div class="waarom-num">03</div>
-          <div><div class="waarom-point-title">Technisch sterk</div><div class="waarom-point-desc">Laravel, PHP, MySQL — echte technologie voor echte webapplicaties. Geen pagebuilders.</div></div>
+          <div><div class="waarom-point-title">Jij blijft eigenaar van je data</div><div class="waarom-point-desc">Dezelfde technologie als professionele bureaus, maar zonder SaaS-lock-in of eindeloos abonnement. Je bezit je eigen code en data.</div></div>
         </div>
         <div class="waarom-point">
           <div class="waarom-num">04</div>
-          <div><div class="waarom-point-title">Bewezen resultaten</div><div class="waarom-point-desc">Pedallica, FC Pintalona, JK Jos — live projecten die dagelijks worden gebruikt.</div></div>
+          <div><div class="waarom-point-title">Persoonlijk en betaalbaar</div><div class="waarom-point-desc">Je spreekt rechtstreeks met de developer. Geen tussenpersonen, eerlijke prijzen die passen bij een clubkas op vrijwilligers.</div></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERGELIJKING -->
+<section class="vergelijk" id="vergelijk">
+  <div class="vergelijk-inner">
+    <div class="vergelijk-header">
+      <div class="section-label">De juiste keuze</div>
+      <h2 class="section-title">WebCraft vs. de rest</h2>
+      <p class="section-sub">Waarom een maatwerk-oplossing beter past bij een club of lokaal bedrijf dan een sjabloon of duur bureau.</p>
+    </div>
+    <div class="vergelijk-table">
+      <div class="vergelijk-row head">
+        <div class="vergelijk-cell head-label">Wat je krijgt</div>
+        <div class="vergelijk-cell head-label center">Wix / sjabloon</div>
+        <div class="vergelijk-cell head-web center head-label">WebCraft</div>
+      </div>
+      <div class="vergelijk-row">
+        <div class="vergelijk-cell feature">Uniek maatwerk design</div>
+        <div class="vergelijk-cell center"><i class="ti ti-x no"></i></div>
+        <div class="vergelijk-cell center vergelijk-web-col"><i class="ti ti-check yes"></i></div>
+      </div>
+      <div class="vergelijk-row">
+        <div class="vergelijk-cell feature">Ledenbeheer &amp; database</div>
+        <div class="vergelijk-cell center"><i class="ti ti-x no"></i></div>
+        <div class="vergelijk-cell center vergelijk-web-col"><i class="ti ti-check yes"></i></div>
+      </div>
+      <div class="vergelijk-row">
+        <div class="vergelijk-cell feature">Persoonlijk contact</div>
+        <div class="vergelijk-cell center"><i class="ti ti-x no"></i></div>
+        <div class="vergelijk-cell center vergelijk-web-col"><i class="ti ti-check yes"></i></div>
+      </div>
+      <div class="vergelijk-row">
+        <div class="vergelijk-cell feature">Je blijft eigenaar van je data</div>
+        <div class="vergelijk-cell center"><i class="ti ti-x no"></i></div>
+        <div class="vergelijk-cell center vergelijk-web-col"><i class="ti ti-check yes"></i></div>
+      </div>
+      <div class="vergelijk-row">
+        <div class="vergelijk-cell feature">Betaalbaar voor een clubkas</div>
+        <div class="vergelijk-cell center"><i class="ti ti-check yes"></i></div>
+        <div class="vergelijk-cell center vergelijk-web-col"><i class="ti ti-check yes"></i></div>
       </div>
     </div>
   </div>
@@ -510,10 +689,10 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
   <div class="ref-grid">
     <div class="ref-card">
       <div class="ref-stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></div>
-      <p class="ref-quote">"Onze wielerclub heeft eindelijk een website waar we fier op zijn. Ploegbeheer, foto's, agenda — alles staat erop. Jarno begreep meteen wat we nodig hadden."</p>
+      <p class="ref-quote">"Onze wielerclub heeft eindelijk een systeem waar we fier op zijn. Ledenbeheer, ritten inschrijven, foto's — alles staat erop. Jarno begreep meteen wat we nodig hadden omdat hij zelf clublid is."</p>
       <div class="ref-person">
         <img class="ref-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Luc">
-        <div><div class="ref-name">Luc Vandenberghe</div><div class="ref-role">Voorzitter · Pedallica Wielerclub</div></div>
+        <div><div class="ref-name">Luc Vandenberghe</div><div class="ref-role">Bestuurslid · Pedallica Wielerclub</div></div>
       </div>
     </div>
     <div class="ref-card">
@@ -534,10 +713,42 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
     </div>
     <div class="ref-card">
       <div class="ref-stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-half-filled"></i></div>
-      <p class="ref-quote">"Onze jongerenvereniging had een moderne site nodig. Jarno zorgde voor een site die onze jongeren écht gebruiken. Makkelijk te beheren ook!"</p>
+      <p class="ref-quote">"Onze jeugdvereniging had een moderne site nodig. Jarno zorgde voor een site die onze jongeren écht gebruiken. Makkelijk te beheren ook!"</p>
       <div class="ref-person">
         <img class="ref-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Sara">
         <div><div class="ref-name">Sara Declercq</div><div class="ref-role">Hoofdleider · JK Jos Jeugdbeweging</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <div class="section-label">Veelgestelde vragen</div>
+      <h2 class="section-title">Goed om te weten</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Wat kost een website bij WebCraft? <i class="ti ti-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">Dat hangt af van wat je nodig hebt. Een eenvoudige website start vanaf €500, een volledige clubwebapp met ledenbeheer (zoals Pedallica) vanaf €900. Ik werk altijd met een duidelijke offerte vooraf, zonder verrassingen. Vraag gerust een gratis, vrijblijvende prijsindicatie aan.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Hoe lang duurt het om mijn website te bouwen? <i class="ti ti-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">Een eenvoudige website is meestal binnen 2 à 3 weken klaar. Een uitgebreide webapplicatie met ledenbeheer duurt langer, afhankelijk van de functionaliteiten. Ik werk met een MVP-aanpak: je ziet snel een eerste versie en we verfijnen samen.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Ik ben geen IT'er — kan ik de site zelf beheren? <i class="ti ti-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">Zeker. Ik bouw alles zo dat het makkelijk te beheren is en geef je uitleg bij oplevering. Wil je liever helemaal ontzorgd worden? Dan neem ik het onderhoud voor mijn rekening met een onderhoudspakket vanaf €40/maand.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Werk je enkel voor sportclubs? <i class="ti ti-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">Sportclubs en verenigingen zijn mijn specialiteit — daar heb ik unieke kennis omdat ik zelf clublid ben. Maar ik bouw ook graag professionele websites voor zelfstandigen, kappers, bakkers en andere lokale bedrijven in Vlaams-Brabant.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Wat gebeurt er met mijn gegevens? <i class="ti ti-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">Bij WebCraft blijf jij eigenaar van je eigen data en code. Geen SaaS-lock-in, geen abonnement dat blijft stijgen. Ik houd ook rekening met GDPR, wat belangrijk is voor clubs die met ledendata werken.</div></div>
       </div>
     </div>
   </div>
@@ -548,8 +759,8 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
   <div class="cta-glow"></div>
   <div class="cta-content">
     <div class="section-label" style="justify-content:center">Klaar om te starten?</div>
-    <h2>Laat jouw bedrijf online <em style="color:var(--orange);font-style:normal">schitteren</em></h2>
-    <p>Stuur jouw e-mailadres en ik contacteer je binnen 24 uur voor een gratis, vrijblijvend gesprek.</p>
+    <h2>Laat jouw club of bedrijf online <em style="color:var(--orange);font-style:normal">schitteren</em></h2>
+    <p>Stuur je e-mailadres en ik contacteer je binnen 24 uur voor een gratis, vrijblijvend gesprek. Geen verplichtingen, gewoon eerlijk advies.</p>
     <div class="cta-form">
       <input class="cta-input" type="email" placeholder="jouw@email.be">
       <a href="mailto:jarno@webcraft.be" class="btn-primary"><i class="ti ti-send"></i> Verstuur</a>
@@ -563,7 +774,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="#" class="logo">Web<span>Craft</span></a>
-      <p>Professionele websites voor lokale bedrijven en verenigingen in Vlaams-Brabant. Betaalbaar, snel en op maat.</p>
+      <p>Maatwerk-websites en webapplicaties voor sportclubs, verenigingen en lokale bedrijven in Vlaams-Brabant &amp; het Pajottenland.</p>
       <div class="footer-socials">
         <a href="#"><i class="ti ti-brand-instagram"></i></a>
         <a href="#"><i class="ti ti-brand-linkedin"></i></a>
@@ -573,17 +784,18 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
     <div class="footer-col">
       <h4>Diensten</h4>
       <ul>
-        <li><a href="#">Maatwerk websites</a></li>
-        <li><a href="#">Sportclubs</a></li>
-        <li><a href="#">SEO</a></li>
-        <li><a href="#">Onderhoud</a></li>
+        <li><a href="#diensten">Clubwebsites</a></li>
+        <li><a href="#diensten">Bedrijfswebsites</a></li>
+        <li><a href="#diensten">Onderhoud</a></li>
+        <li><a href="#pedallica">Pedallica case</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Navigatie</h4>
       <ul>
-        <li><a href="#over">Over WebCraft</a></li>
+        <li><a href="#over">Over mij</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -596,33 +808,18 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 5
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 WebCraft · Jarno Janssens</p>
+    <p>© 2025 WebCraft · Jarno Janssens · Toegepaste Informatica, EhB</p>
     <p>Gebouwd met <span>♥</span> in Vlaams-Brabant</p>
   </div>
 </footer>
 
 <script>
-  function toggleNav() {
-    var links = document.getElementById('nav-links');
-    var icon = document.getElementById('ham-icon');
-    links.classList.toggle('nav-open');
-    icon.className = links.classList.contains('nav-open') ? 'ti ti-x' : 'ti ti-menu-2';
-  }
-  function closeNav() {
-    var links = document.getElementById('nav-links');
-    var icon = document.getElementById('ham-icon');
-    links.classList.remove('nav-open');
-    icon.className = 'ti ti-menu-2';
-  }
+  function toggleNav(){var l=document.getElementById('nav-links'),i=document.getElementById('ham-icon');l.classList.toggle('nav-open');i.className=l.classList.contains('nav-open')?'ti ti-x':'ti ti-menu-2';}
+  function closeNav(){var l=document.getElementById('nav-links'),i=document.getElementById('ham-icon');l.classList.remove('nav-open');i.className='ti ti-menu-2';}
+  function toggleFaq(el){el.parentElement.classList.toggle('open');}
 
-  // Scroll highlight nav
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : ''; });
-  });
+  var sections=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',function(){var c='';sections.forEach(function(s){if(window.scrollY>=s.offsetTop-120)c=s.id;});navLinks.forEach(function(a){a.style.color=a.getAttribute('href')==='#'+c?'var(--text)':'';});});
 </script>
 </body>
 </html>
